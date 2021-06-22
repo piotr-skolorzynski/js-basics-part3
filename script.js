@@ -101,3 +101,28 @@ const showUsersData = users => {
 }
 
 showUsersData(people);
+
+//exercise 3
+
+// exercise 4
+
+let properAge = 30;
+
+const findPersonElderThan = (age, usersArray) => usersArray.filter(user => user.age >= age);
+
+const chooseWomen = usersArray => usersArray.filter(user => user.gender === 'Female');
+
+const showWomenWithProperAge = (age, usersArray) =>{
+    const peopleWithProperAge = findPersonElderThan(age, usersArray);
+    const womenWithProperAge = chooseWomen(peopleWithProperAge);
+    womenWithProperAge.forEach(woman => {
+        console.log(`${woman.first_name} ma ${woman.age} lat`);
+    })
+    const womenAge = womenWithProperAge.map(woman => woman.age);
+    const ageSum = womenAge.reduce( (previousValue, currentValue) => {
+        return previousValue + currentValue;
+    }, 0);
+    console.log(`Razem mają: ${ageSum} lat`);
+}
+
+showWomenWithProperAge(properAge, people);
