@@ -76,3 +76,28 @@ Input dla zadań 6-10: [11, -10, 50, 5, -8, 9, 20, 21, -4, 11, -5, -12, 100, 20,
     Output: '1.5 Suma elementów parzystych: 193'
 
 */
+
+// ************** solutions ******************
+
+//exercise 1
+
+
+
+//exercise 2
+
+const showUsersData = users => {
+    const usersData = users.map(user => {
+        const userData = [];
+        userData.push(user.title);
+        userData.push(user.first_name);
+        userData.push(user.last_name);
+        userData.push(user.job_title);
+        userData.push(`in ${user.company}`)
+        return userData.join(' ');
+    });
+    usersData.forEach( user => {
+        console.log(user)
+    });
+}
+
+showUsersData(people);
