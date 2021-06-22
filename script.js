@@ -154,3 +154,19 @@ showWomenWithProperAge(properAge, people);
 
 // exercise 5
 console.log('-------------- exercise 5 -----------------------');
+
+const addUsersProperties = usersArray => {
+    const newUsersProperties = usersArray.map(user => {
+        //wykorzystanie konwersji na JSON i spowrotem to stworzenia kopii prostego obiektu
+        const newUser = JSON.parse(JSON.stringify(user));
+        newUser.height = `${user.age + 100}`;
+        newUser.weight = `${user.age + 10}`;
+
+        //dokoczyć tworzenie nowego obiektu
+
+
+        return newUser;
+    });
+    return newUsersProperties;
+};
+console.log(addUsersProperties(people))
