@@ -79,15 +79,21 @@ Input dla zadań 6-10: [11, -10, 50, 5, -8, 9, 20, 21, -4, 11, -5, -12, 100, 20,
 
 // ************** solutions ******************
 
-// //exercise 1
-// console.log('-------------- exercise 1 -----------------------');
+//exercise 1
+console.log('-------------- exercise 1 -----------------------');
 
-// const showOnlyUsersWithRace = nationality => {
-//     const selectedUsers = people.filter(person => person.race === nationality)
-//     console.log(selectedUsers);
-// };
+const showOnlyUsersWithRace = nationality => {
+    if (typeof nationality !== 'string' || nationality === '' ) {
+        console.log('taka rasa nie istnieje')
+    } else {
+    const selectedUsers = people.filter(person => person.race === nationality);
+    console.log(selectedUsers);
+    }
+};
 
-// showOnlyUsersWithRace('Cambodian');
+showOnlyUsersWithRace('Cambodian');
+showOnlyUsersWithRace(1);
+showOnlyUsersWithRace('Polish');
 
 
 //exercise 2
