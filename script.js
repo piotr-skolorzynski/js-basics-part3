@@ -84,6 +84,7 @@ Input dla zadań 6-10: [11, -10, 50, 5, -8, 9, 20, 21, -4, 11, -5, -12, 100, 20,
 
 
 //exercise 2
+console.log('-------------- exercise 2 -----------------------');
 
 const showUsersData = users => {
     const usersData = users.map(user => {
@@ -103,8 +104,32 @@ const showUsersData = users => {
 showUsersData(people);
 
 //exercise 3
+console.log('-------------- exercise 3 -----------------------');
+
+const changeUsersProperties = usersArray => {
+    const newUsersProperties = usersArray.map(user => {
+        newUser = {
+            id: user.id,
+            first_name: user.first_name,
+            last_name: user.last_name,
+            full_name: `${user.first_name} ${user.last_name}`
+        }
+        return newUser;
+    });
+    return newUsersProperties;
+};
+
+const showShortenUsersArray = usersArray => {
+    const shortenUsersArray = changeUsersProperties(usersArray);
+    shortenUsersArray.forEach(user => {
+        console.log(user)
+    })
+};
+
+showShortenUsersArray(people);
 
 // exercise 4
+console.log('-------------- exercise 4 -----------------------');
 
 let properAge = 30;
 
@@ -126,3 +151,6 @@ const showWomenWithProperAge = (age, usersArray) =>{
 }
 
 showWomenWithProperAge(properAge, people);
+
+// exercise 5
+console.log('-------------- exercise 5 -----------------------');
