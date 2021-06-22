@@ -79,8 +79,15 @@ Input dla zadań 6-10: [11, -10, 50, 5, -8, 9, 20, 21, -4, 11, -5, -12, 100, 20,
 
 // ************** solutions ******************
 
-//exercise 1
+// //exercise 1
+// console.log('-------------- exercise 1 -----------------------');
 
+// const showOnlyUsersWithRace = nationality => {
+//     const selectedUsers = people.filter(person => person.race === nationality)
+//     console.log(selectedUsers);
+// };
+
+// showOnlyUsersWithRace('Cambodian');
 
 
 //exercise 2
@@ -154,19 +161,30 @@ showWomenWithProperAge(properAge, people);
 
 // exercise 5
 console.log('-------------- exercise 5 -----------------------');
+let minBMI = 18.5;
+let maxBMI = 24.99;
 
 const addUsersProperties = usersArray => {
     const newUsersProperties = usersArray.map(user => {
-        //wykorzystanie konwersji na JSON i spowrotem to stworzenia kopii prostego obiektu
+        //wykorzystanie konwersji na JSON i spowrotem do stworzenia głębokiej kopii prostego obiektu
         const newUser = JSON.parse(JSON.stringify(user));
-        newUser.height = `${user.age + 100}`;
-        newUser.weight = `${user.age + 10}`;
-
-        //dokoczyć tworzenie nowego obiektu
-
-
+        newUser.height = user.age + 100;
+        newUser.weight = user.age + 10;
+        newUser.bmi = (newUser.weight / Math.pow(newUser.height/100, 2)).toFixed(2);
         return newUser;
     });
     return newUsersProperties;
 };
-console.log(addUsersProperties(people))
+
+const chooseUsersWithBmiRange = (min, max, array) => {
+    array.filter(user => parseFloat(user.bmi) >= min && parseFloat(user.bmi) <= max);
+};
+
+const showUserNamesWithSelectedBmiRange = (min, max, usersArray) => {
+    const newUsersArray = addUsersProperties(usersArray);
+    const usersWithSelectedBmiRangeArray = newUsersArray.filter(user => parseFloat(user.bmi) >= min && parseFloat(user.bmi) <= max);
+    return usersWithSelectedBmiRangeArray.map(user => user.first_name);
+};
+
+const usersNames = showUserNamesWithSelectedBmiRange(minBMI, maxBMI, people);
+console.log(usersNames);
