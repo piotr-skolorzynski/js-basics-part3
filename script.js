@@ -232,14 +232,19 @@ console.log(`Elementy większe lub równe od 20: ${selectedNumbers}`);
 // exercise 9
 console.log('-------------- exercise 9 -----------------------');
 
+const sumNegativeNumbers = numbersArray => numbersArray.reduce((previousValue, currentValue) => {
+    return currentValue < 0 ? previousValue + currentValue : previousValue;
+}, 0);
+
+const sumNegativeNums = sumNegativeNumbers(numbers);
+console.log(`Suma elementów ujemnych: ${sumNegativeNums}`);
+
 // exercise 10
 console.log('-------------- exercise 10 -----------------------');
 
-const sumEvenIndexNumbers = numbersArray => {
-    return numbersArray.reduce((previousValue, currentValue, numberIndex) => {
+const sumEvenIndexNumbers = numbersArray => numbersArray.reduce((previousValue, currentValue, numberIndex) => {
         return numberIndex%2 === 0 ? previousValue + currentValue : previousValue;
     }, 0);
-}
 
 const sumEvenNums = sumEvenIndexNumbers(numbers);
 console.log(`Suma elementów parzystych: ${sumEvenNums}`);
