@@ -194,3 +194,23 @@ const showUserNamesWithSelectedBmiRange = (min, max, usersArray) => {
 
 const usersNames = showUserNamesWithSelectedBmiRange(minBMI, maxBMI, people);
 console.log(usersNames);
+
+//******************************
+
+const numbers = [11, -10, 50, 5, -8, 9, 20, 21, -4, 11, -5, -12, 100, 20, 14, 8, 19, 44, -21, -53, 17, -21];
+
+//*****************************
+
+// exercise 6
+console.log('-------------- exercise 6 -----------------------');
+
+const sumNumbers = numbersArray => {
+    return numbersArray.reduce((previousValue, currentValue) => previousValue + currentValue);
+}
+
+const sum = sumNumbers(numbers);
+console.log(`Suma elementów w tablicy: ${sum}`);
+
+// exercise 7
+console.log('-------------- exercise 7 -----------------------');
+
