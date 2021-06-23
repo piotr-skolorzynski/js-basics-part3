@@ -228,3 +228,18 @@ const showSelectedNumbers = (limit, numbersArray) => numbersArray.filter(number 
 
 const selectedNumbers = showSelectedNumbers(20, numbers);
 console.log(`Elementy większe lub równe od 20: ${selectedNumbers}`);
+
+// exercise 9
+console.log('-------------- exercise 9 -----------------------');
+
+// exercise 10
+console.log('-------------- exercise 10 -----------------------');
+
+const sumEvenIndexNumbers = numbersArray => {
+    return numbersArray.reduce((previousValue, currentValue, numberIndex) => {
+        return numberIndex%2 === 0 ? previousValue + currentValue : previousValue;
+    }, 0);
+}
+
+const sumEvenNums = sumEvenIndexNumbers(numbers);
+console.log(`Suma elementów parzystych: ${sumEvenNums}`);
