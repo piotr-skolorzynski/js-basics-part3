@@ -224,11 +224,7 @@ console.log(`Suma elementów w tablicy: ${sumAbsNums}`);
 // exercise 8
 console.log('-------------- exercise 8 -----------------------');
 
-// const showNumbersHigherThan = (limit, numbersArray) => {
-//     console.log(numbersArray)
-//     // return numbersArray.filter(number => number >= limit);
-// }
-    
+const showSelectedNumbers = (limit, numbersArray) => numbersArray.filter(number => number >= limit);    
 
-// const selectedNumbers = showOnlyUsersWithRace(20, numbers);
-// console.log(`Elementy większe lub równe od 20: ${selectedNumbers}`);
+const selectedNumbers = showSelectedNumbers(20, numbers);
+console.log(`Elementy większe lub równe od 20: ${selectedNumbers}`);
