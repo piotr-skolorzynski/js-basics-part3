@@ -120,16 +120,11 @@ showUsersData(people);
 console.log('-------------- exercise 3 -----------------------');
 
 const changeUsersProperties = usersArray => {
-    const newUsersProperties = usersArray.map(user => {
-        newUser = {
-            id: user.id,
-            first_name: user.first_name,
-            last_name: user.last_name,
-            full_name: `${user.first_name} ${user.last_name}`
-        }
+    return usersArray.map(user => {
+        const newUser = JSON.parse(JSON.stringify(user));
+        newUser.full_name = `${user.first_name} ${user.last_name}`;
         return newUser;
     });
-    return newUsersProperties;
 };
 
 const showShortenUsersArray = usersArray => {
