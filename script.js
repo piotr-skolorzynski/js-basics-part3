@@ -145,7 +145,7 @@ const findPersonElderThan = (age, usersArray) => usersArray.filter(user => user.
 
 const chooseWomen = usersArray => usersArray.filter(user => user.gender === 'Female');
 
-const showWomenWithProperAge = (age, usersArray) =>{
+const showWomenWithProperAge = (age, usersArray) => {
     const peopleWithProperAge = findPersonElderThan(age, usersArray);
     const womenWithProperAge = chooseWomen(peopleWithProperAge);
     womenWithProperAge.forEach(woman => {
@@ -167,7 +167,6 @@ let maxBMI = 24.99;
 
 const addUsersProperties = usersArray => {
     const newUsersProperties = usersArray.map(user => {
-        //wykorzystanie konwersji na JSON i spowrotem do stworzenia głębokiej kopii prostego obiektu
         const newUser = JSON.parse(JSON.stringify(user));
         newUser.height = user.age + 100;
         newUser.weight = user.age + 10;
@@ -175,10 +174,6 @@ const addUsersProperties = usersArray => {
         return newUser;
     });
     return newUsersProperties;
-};
-
-const chooseUsersWithBmiRange = (min, max, array) => {
-    array.filter(user => parseFloat(user.bmi) >= min && parseFloat(user.bmi) <= max);
 };
 
 const showUserNamesWithSelectedBmiRange = (min, max, usersArray) => {
