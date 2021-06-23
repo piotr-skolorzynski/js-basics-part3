@@ -208,9 +208,27 @@ const sumNumbers = numbersArray => {
     return numbersArray.reduce((previousValue, currentValue) => previousValue + currentValue);
 }
 
-const sum = sumNumbers(numbers);
-console.log(`Suma elementów w tablicy: ${sum}`);
+const sumNums = sumNumbers(numbers);
+console.log(`Suma elementów w tablicy: ${sumNums}`);
 
 // exercise 7
 console.log('-------------- exercise 7 -----------------------');
 
+const sumAbsVal = numbersArray => {
+    return numbersArray.reduce((previousValue, currentValue) => Math.abs(previousValue) + Math.abs(currentValue));
+}
+
+const sumAbsNums = sumAbsVal(numbers);
+console.log(`Suma elementów w tablicy: ${sumAbsNums}`);
+
+// exercise 8
+console.log('-------------- exercise 8 -----------------------');
+
+// const showNumbersHigherThan = (limit, numbersArray) => {
+//     console.log(numbersArray)
+//     // return numbersArray.filter(number => number >= limit);
+// }
+    
+
+// const selectedNumbers = showOnlyUsersWithRace(20, numbers);
+// console.log(`Elementy większe lub równe od 20: ${selectedNumbers}`);
