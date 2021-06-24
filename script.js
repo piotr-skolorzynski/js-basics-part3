@@ -114,6 +114,13 @@ const showUsersData = users => {
     });
 }
 
+// komentarz Bartosza Cytrowskiego **********
+// wykorzystaj destrukturyzację
+
+// const showUsersData = users => users.map(({ title, first_name, last_name, job_title, company }) => [title, first_name, last_name, job_title, `in ${company}`].join(' ')
+// ).forEach(userLine => console.log(userLine));
+// ******************************************
+
 showUsersData(people);
 
 //exercise 3
@@ -126,6 +133,12 @@ const changeUsersProperties = usersArray => {
         return newUser;
     });
 };
+
+// komentarz Bartosza Cytrowskiego **********
+// nie ma potrzeby wykorzystywania JSONA do robienia głębokiej kopii dla obiektu z typami prostymi - można wykorzystać operator spread
+
+// const changeUsersProperties = users => users.map(user => ({...user, full_name: `${user.first_name} ${user.last_name}`}));
+// *******************************************
 
 const showShortenUsersArray = usersArray => {
     const shortenUsersArray = changeUsersProperties(usersArray);
@@ -204,12 +217,16 @@ console.log(`Suma elementów w tablicy: ${sumNums}`);
 // exercise 7
 console.log('-------------- exercise 7 -----------------------');
 
-const sumAbsVal = numbersArray => {
-    return numbersArray.reduce((previousValue, currentValue) => Math.abs(previousValue) + Math.abs(currentValue));
-}
+const sumAbsVal = numbersArray => numbersArray.reduce((previousValue, currentValue) => previousValue + Math.abs(currentValue), 0);
+
+// komentarz Bartosza Cytrowskiego *********
+// funkcję sumAbsVal można uprościć to poniższego zapisu:
+// const sum = (a, b) => a + b;
+// const sumAbsVal = numbers => numbers.map(Math.abs).reduce(sum, 0)
+// ******************************************
 
 const sumAbsNums = sumAbsVal(numbers);
-console.log(`Suma elementów w tablicy: ${sumAbsNums}`);
+console.log(`Suma wartości bezwzględnych z elementów w tablicy: ${sumAbsNums}`);
 
 // exercise 8
 console.log('-------------- exercise 8 -----------------------');
@@ -232,9 +249,14 @@ console.log(`Suma elementów ujemnych: ${sumNegativeNums}`);
 // exercise 10
 console.log('-------------- exercise 10 -----------------------');
 
-const sumEvenIndexNumbers = numbersArray => numbersArray.reduce((previousValue, currentValue, numberIndex) => {
-        return numberIndex%2 === 0 ? previousValue + currentValue : previousValue;
-    }, 0);
+const sumEvenIndexNumbers = numbersArray => numbersArray.reduce((previousValue, currentValue, numberIndex) => numberIndex%2 === 0 ? previousValue + currentValue : previousValue, 0);
+
+// komentarz Bartosza Cytrowskiego **********
+// funkcję można uprościć
+// const sum = (a, b) => a + b;
+// const onEvenIndex = (_, i) => i % 2 === 0
+// const sumEvenIndexNumbers = numbers => numbers.filter(onEvenIndex).reduce(sum, 0)
+// *******************************************
 
 const sumEvenNums = sumEvenIndexNumbers(numbers);
 console.log(`Suma elementów parzystych: ${sumEvenNums}`);
